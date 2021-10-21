@@ -42,3 +42,48 @@ int main()
     printf("The number of distinct elements are %d",c);   
     return 0;
 }
+
+
+
+Question 2
+Fequency. After seeing the efficiency of Chitti, Dr. Vaseegaran assigns another job to him. The 
+new responsibility is to count the frequency of numbers present in a group of numbers. The 
+answer should be tabulated. Consider the following example. The expected output for the given 
+set if numbers is: 2 6 10 14 18 10 3 7 11 15 19 3 7 10 14
+
+#include<stdio.h>
+
+int main()
+{
+    int a[10];
+    int n,i,j;
+    int c=1;
+    printf("Enter the no of elements in an array:\n");
+    scanf("%d",&n);
+    printf("Enter the elements of array:\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+   
+    printf("The array elements are:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\n",a[i]);
+    }
+   
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]==a[j])
+            {
+                c++;
+                printf("%d present %d times\n",a[i],c);
+               
+            }
+           c=1;
+        }
+    }
+       
+}
